@@ -16,28 +16,19 @@ The following instructions will cover installing the comet-munin plugin on Ubunt
 A lot of the instructions here need to be run as root, so run `sudo -i`  
 
 Download , extract, and move the scripts to `/usr/share/munin/plugins`.  
+Example:
 `cd ~/Downloads`  
 `unzip comet-munin-plugin-main.zip`  
 `cd ~/Downloads/comet-munin-plugin-main`  
-`mv -t /usr/share/munin/plugins comet_jobs_classification comet_jobs_status comet_latency comet_online_devices comet_server_history comet_uptime comet_server.py`
+`mv comet_* /usr/share/munin/plugins`
 
-Set all the files aside from `comet_server.py` as executable.  
-`cd /usr/share/munin/plugins`  
-`chmod +x comet_jobs_classification`  
-`chmod +x comet_jobs_status`  
-`chmod +x comet_latency`  
-`chmod +x comet_online_devices`  
-`chmod +x comet_server_history`  
-`chmod +x comet_uptime`  
-
-Create a symbolic link of these files to `/etc/munin/plugins`.  
-`cd /etc/munin/plugins`  
-`ln -s /usr/share/munin/plugins/comet_jobs_classification comet_jobs_classification`  
-`ln -s /usr/share/munin/plugins/comet_jobs_status comet_jobs_status`  
-`ln -s /usr/share/munin/plugins/comet_latency comet_latency`  
-`ln -s /usr/share/munin/plugins/comet_online_devices comet_online_devices`  
-`ln -s /usr/share/munin/plugins/comet_server_history comet_server_history`  
-`ln -s /usr/share/munin/plugins/comet_uptime comet_uptime`  
+Set all the files aside from `comet_server.py` as executable and Create a symbolic link of these files to `/etc/munin/plugins`.  
+```
+for plugin in comet_jobs_classification comet_jobs_status comet_latency comet_online_devices comet_server_history comet_uptime; do
+  chmod +x "/usr/share/munin/plugins/$plugin"
+  ln -s "/usr/share/munin/plugins/$plugin" "/etc/munin/plugins/$plugin"
+done
+```
 
 Once done, restart Munin and Munin node `systemctl restart munin munin-node`
 
