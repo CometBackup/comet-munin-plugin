@@ -16,7 +16,7 @@ The following instructions will cover installing the comet-munin plugin on Ubunt
 A lot of the instructions here need to be run as root, so run `sudo -i`  
 
 Download , extract, and move the scripts to `/usr/share/munin/plugins`.  
-Example:
+Example:  
 `cd ~/Downloads`  
 `unzip comet-munin-plugin-main.zip`  
 `cd ~/Downloads/comet-munin-plugin-main`  
