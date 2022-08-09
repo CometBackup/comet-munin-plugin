@@ -15,14 +15,14 @@ The following instructions will cover installing the comet-munin plugin on Ubunt
 
 A lot of the instructions here need to be run as root, so run `sudo -i`  
 
-Download , extract, and move the scripts to `/usr/share/munin/plugins`.  
+1. Download , extract, and move the scripts to `/usr/share/munin/plugins`.  
 Example:  
 `cd ~/Downloads`  
 `unzip comet-munin-plugin-main.zip`  
 `cd ~/Downloads/comet-munin-plugin-main`  
 `mv comet_* /usr/share/munin/plugins`
 
-Set all the files aside from `comet_server.py` as executable and Create a symbolic link of these files to `/etc/munin/plugins`.  
+2. Set all the files aside from `comet_server.py` as executable and Create a symbolic link of these files to `/etc/munin/plugins`.  
 ```
 for plugin in comet_jobs_classification comet_jobs_status comet_latency comet_online_devices comet_server_history comet_uptime; do
   chmod +x "/usr/share/munin/plugins/$plugin"
@@ -30,6 +30,14 @@ for plugin in comet_jobs_classification comet_jobs_status comet_latency comet_on
 done
 ```
 
-Once done, restart Munin and Munin node `systemctl restart munin munin-node`
+3. Enter your Comet Server admin credentials in `comet_server.py`  
+`nano usr/share/munin/plugins/comet_server.py`  
+From here enter your credentials on line 9-11 in the quotation marks:  
+`COMET_SERVER_URL = "https://mycometserver.com/"` - This must include http and the trailing forward slash.  
+`COMET_ADMIN_USERNAME = "adminUsername"`  
+`COMET_ADMIN_PASSWORD = "adminPassword"`  
+Then save and close nano.
+
+4. Once done, restart Munin and Munin node `systemctl restart munin munin-node`
 
 ## Generated metrics
