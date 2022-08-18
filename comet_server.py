@@ -58,7 +58,7 @@ class CometServer(object):
 		return count
 
 	def countOutdated(self):
-		#Count all online devices on the Comet Server
+		#Count all online but outdated devices on the Comet Server
 		version = self._request("api/v1/admin/meta/version", {})["Version"]
 		count = 0
 		for device in self._request("api/v1/admin/dispatcher/list-active", {}).values():
@@ -67,7 +67,7 @@ class CometServer(object):
 		return count
 
 	def countOffline(self):
-		#Count all online devices on the Comet Server
+		#Count all offline devices on the Comet Server
 		count = 0
 		for user in self._request("api/v1/admin/list-users-full", {}).values():
 			count += len(user["Devices"])
@@ -76,7 +76,7 @@ class CometServer(object):
 		return count
 
 
-#---Server History Graph
+#---Server History
 	def countUsers(self):
 		#Count all usernames on the Comet Server
 		return len(self._request("api/v1/admin/list-users", {}))
