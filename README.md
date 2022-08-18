@@ -40,4 +40,13 @@ Then save and close nano.
 
 4. Once done, restart Munin and Munin node `systemctl restart munin munin-node`
 
-## Generated metrics
+## Generated graphs
+
+|Graph                |Type  |Description
+|----------------------|------|----
+|Comet Online Devices|Gauge |The total number of devices along with their version status
+|Comet Server History|Gauge |The current number of users, devices, storage buckets, and boosters
+|Comet Job Status 24h|Gauge |Jobs over the last 24 hours and their status
+|Comet Job Classification 24h|Gauge |Jobs over the last 24 hours and their classification
+|Comet API Latency|Gauge |Time taken to get the server configuration via an API call
+|Comet Uptime|Gauge |Whether the server is online or offline
