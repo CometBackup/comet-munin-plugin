@@ -42,11 +42,11 @@ Then save and close nano.
 
 ## Generated graphs
 
-|Graph                |Type  |Description
-|----------------------|------|----
-|Comet Online Devices|Gauge |The total number of devices along with their version status
-|Comet Server History|Gauge |The current number of users, devices, storage buckets, and boosters
-|Comet Job Status 24h|Gauge |Jobs over the last 24 hours and their status
-|Comet Job Classification 24h|Gauge |Jobs over the last 24 hours and their classification
-|Comet API Latency|Gauge |Time taken to get the server configuration via an API call
-|Comet Uptime|Gauge |Whether the server is online or offline
+|Graph                |Description
+|----------------------|----
+|Comet Online Devices|The total number of devices along with their version status
+|Comet Server History|The current number of users, devices, storage buckets, and boosters
+|Comet Job Status 24h|Jobs over the last 24 hours and their status
+|Comet Job Classification 24h|Jobs over the last 24 hours and their classification
+|Comet API Latency|Time taken to get the server configuration via an API call
+|Comet Uptime|Whether the server is online or offline
