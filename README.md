@@ -17,9 +17,9 @@ A lot of the instructions here need to be run as root, so run `sudo -i`
 
 1. Download , extract, and move the scripts to `/usr/share/munin/plugins`.  
 Example:  
-`cd ~/Downloads`  
+`cd ~"username"/Downloads`  
 `unzip comet-munin-plugin-main.zip`  
-`cd ~/Downloads/comet-munin-plugin-main`  
+`cd ~"username"/Downloads/comet-munin-plugin-main/comet-munin-plugin`  
 `mv comet_* /usr/share/munin/plugins`
 
 2. Set all the files aside from `comet_server.py` as executable and Create a symbolic link of these files to `/etc/munin/plugins`.  
@@ -31,7 +31,7 @@ done
 ```
 
 3. Enter your Comet Server admin credentials in `comet_server.py`  
-`nano usr/share/munin/plugins/comet_server.py`  
+`nano /usr/share/munin/plugins/comet_server.py`  
 From here enter your credentials on line 9-11 in the quotation marks:  
 `COMET_SERVER_URL = "https://mycometserver.com/"` - This must include http and the trailing forward slash.  
 `COMET_ADMIN_USERNAME = "adminUsername"`  
