@@ -17,9 +17,9 @@ A lot of the instructions here need to be run as root, so run `sudo -i`
 
 1. Download , extract, and move the scripts to `/usr/share/munin/plugins`.  
 Example:  
-`cd ~"username"/Downloads`  
-`unzip comet-munin-plugin-main.zip`  
-`cd ~"username"/Downloads/comet-munin-plugin-main/comet-munin-plugin`  
+`wget __link__`
+`unzip comet-munin-plugin-main.zip`
+`cd comet-munin-plugin-main/comet-munin-plugin`  
 `mv comet_* /usr/share/munin/plugins`
 
 2. Set all the files aside from `comet_server.py` as executable and Create a symbolic link of these files to `/etc/munin/plugins`.  
