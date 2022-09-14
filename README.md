@@ -1,5 +1,7 @@
 # Munin Plugin for Comet Server
 
+[![@CometBackup on Twitter](https://img.shields.io/badge/twitter-%40CometBackup-blue.svg?style=flat)](https://twitter.com/CometBackup)
+
 This is a set of scripts for [Munin](https://munin-monitoring.org/) to export metrics from a running Comet Server instance over the Comet Server API.
 
 ## Requirements
@@ -50,3 +52,7 @@ Then save and close nano.
 |Comet Job Classification 24h|Jobs over the last 24 hours and their classification
 |Comet API Latency|Time taken to get the server configuration via an API call
 |Comet Uptime|Whether the server is online or offline
+
+## Running example
+
+[![](example.png)](example.png)
