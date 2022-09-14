@@ -17,15 +17,18 @@ The following instructions will cover installing the comet-munin plugin on Ubunt
 
 A lot of the instructions here need to be run as root, so run `sudo -i`  
 
-1. Download , extract, and move the scripts to `/usr/share/munin/plugins`.  
+1. Download, extract, and move the scripts to `/usr/share/munin/plugins`.  
 Example:  
-`wget __link__`  
-`unzip comet-munin-plugin-main.zip`  
-`cd comet-munin-plugin-main/comet-munin-plugin`  
-`mv comet_* /usr/share/munin/plugins`  
+
+```bash
+wget 'https://github.com/CometBackup/comet-munin-plugin/archive/refs/heads/main.zip'
+unzip comet-munin-plugin-main.zip
+cd comet-munin-plugin-main/comet-munin-plugin
+mv comet_* /usr/share/munin/plugins
+```
 
 2. Set all the files aside from `comet_server.py` as executable and Create a symbolic link of these files to `/etc/munin/plugins`.  
-```
+```bash
 for plugin in comet_jobs_classification comet_jobs_status comet_latency comet_online_devices comet_server_history comet_uptime; do
   chmod +x "/usr/share/munin/plugins/$plugin"
   ln -s "/usr/share/munin/plugins/$plugin" "/etc/munin/plugins/$plugin"
